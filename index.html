@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Özcanlar Turşu Admin</title>
+<style>
+body { font-family: Arial; background:#f4f4f4; margin:0; padding:20px; }
+.container { max-width:800px; margin:auto; background:white; padding:20px; border-radius:10px; }
+input, button { width:100%; padding:10px; margin:5px 0; }
+button { cursor:pointer; background:#2c7; color:white; border:none; }
+.product { border:1px solid #ddd; padding:10px; margin:10px 0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h2>Admin Panel</h2>
+
+<div id="loginBox">
+<input type="password" id="pass" placeholder="Şifre">
+<button onclick="login()">Giriş</button>
+</div>
+
+<div id="panel" style="display:none">
+
+<h3>Ürün Ekle</h3>
+
+<input id="name" placeholder="Ürün adı">
+<input id="price" placeholder="Fiyat">
+<input id="desc" placeholder="Açıklama">
+<input id="image" placeholder="Resim URL">
+<button onclick="addProduct()">Ekle</button>
+
+<h3>Ürünler</h3>
+<div id="list"></div>
+
+</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+<script>
+// 🔥 BURAYA SENİN FIREBASE CONFIG GELECEK
+const firebaseConfig = {
+  apiKey: "XXX",
+  authDomain: "XXX",
+  projectId: "XXX",
+  storageBucket: "XXX",
+  messagingSenderId: "XXX",
+  appId: "XXX"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// 🔐 ŞİFRE
+function login(){
+  if(document.getElementById("pass").value === "1234"){
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("panel").style.display="block";
+    loadProducts();
+  } else {
+    alert("Hatalı şifre");
+  }
+}
+
+// ➕ Ürün ekle
+function addProduct(){
+  db.collection("products").add({
+    name: document.getElementById("name").value,
+    price: document.getElementById("price").value,
+    description: document.getElementById("desc").value,
+    image: document.getElementById("image").value
+  });
+  alert("Eklendi");
+  loadProducts();
+}
+
+// 📦 Ürünleri listele
+function loadProducts(){
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  db.collection("products").get().then(snapshot=>{
+    snapshot.forEach(doc=>{
+      let p = doc.data();
+      list.innerHTML += `
+        <div class="product">
+          <b>${p.name}</b><br>
+          ${p.price} TL<br>
+          <button onclick="del('${doc.id}')">Sil</button>
+        </div>
+      `;
+    });
+  });
+}
+
+// 🗑️ Sil
+function del(id){
+  db.collection("products").doc(id).delete();
+  loadProducts();
+}
+</script>
+
+</body>
+</html>
