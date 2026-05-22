@@ -2,48 +2,125 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Özcanlar Turşu Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Özcanlar Turşu Admin Panel</title>
+
 <style>
-body { font-family: Arial; background:#f4f4f4; margin:0; padding:20px; }
-.container { max-width:800px; margin:auto; background:white; padding:20px; border-radius:10px; }
-input, button { width:100%; padding:10px; margin:5px 0; }
-button { cursor:pointer; background:#2c7; color:white; border:none; }
-.product { border:1px solid #ddd; padding:10px; margin:10px 0; }
+body{
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1,h2{
+text-align:center;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+padding:12px;
+border:none;
+border-radius:8px;
+background:#1f7a3f;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+width:100%;
+}
+
+button:hover{
+background:#14552b;
+}
+
+.product{
+border:1px solid #ddd;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+background:#fafafa;
+}
+
+.product img{
+width:100%;
+max-width:250px;
+border-radius:10px;
+margin-top:10px;
+}
+
+.delete-btn{
+background:#c62828;
+}
+
+.delete-btn:hover{
+background:#8e0000;
+}
+
+#panel{
+display:none;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
 
-<h2>Admin Panel</h2>
+<h1>Özcanlar Turşu</h1>
 
 <div id="loginBox">
-<input type="password" id="pass" placeholder="Şifre">
-<button onclick="login()">Giriş</button>
+<h2>Admin Giriş</h2>
+
+<input type="password" id="password" placeholder="Şifre">
+
+<button onclick="login()">Giriş Yap</button>
 </div>
 
-<div id="panel" style="display:none">
+<div id="panel">
 
-<h3>Ürün Ekle</h3>
+<h2>Ürün Ekle</h2>
 
-<input id="name" placeholder="Ürün adı">
-<input id="price" placeholder="Fiyat">
-<input id="desc" placeholder="Açıklama">
-<input id="image" placeholder="Resim URL">
-<button onclick="addProduct()">Ekle</button>
+<input type="text" id="name" placeholder="Ürün Adı">
 
-<h3>Ürünler</h3>
-<div id="list"></div>
+<input type="number" id="price" placeholder="Fiyat">
+
+<textarea id="description" placeholder="Açıklama"></textarea>
+
+<input type="text" id="image" placeholder="Resim URL">
+
+<button onclick="addProduct()">Ürün Ekle</button>
+
+<h2>Ürünler</h2>
+
+<div id="products"></div>
 
 </div>
 
 </div>
 
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
 <script>
-// 🔥 BURAYA SENİN FIREBASE CONFIG GELECEK
+
 const firebaseConfig = {
   apiKey: "AIzaSyAp62PwdCob_bNQyFoM1QUcyUJD8gGb_ZE",
   authDomain: "tursu-site.firebaseapp.com",
@@ -55,55 +132,112 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
 const db = firebase.firestore();
 
-// 🔐 ŞİFRE
 function login(){
-  if(document.getElementById("pass").value === "1234"){
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("panel").style.display="block";
-    loadProducts();
-  } else {
-    alert("Hatalı şifre");
-  }
+
+const pass = document.getElementById("password").value;
+
+if(pass === "1234"){
+
+document.getElementById("loginBox").style.display = "none";
+
+document.getElementById("panel").style.display = "block";
+
+loadProducts();
+
+}else{
+
+alert("Şifre yanlış");
+
 }
 
-// ➕ Ürün ekle
+}
+
 function addProduct(){
-  db.collection("products").add({
-    name: document.getElementById("name").value,
-    price: document.getElementById("price").value,
-    description: document.getElementById("desc").value,
-    image: document.getElementById("image").value
-  });
-  alert("Eklendi");
-  loadProducts();
+
+const name = document.getElementById("name").value;
+
+const price = document.getElementById("price").value;
+
+const description = document.getElementById("description").value;
+
+const image = document.getElementById("image").value;
+
+db.collection("products").add({
+
+name:name,
+price:price,
+description:description,
+image:image
+
+})
+.then(()=>{
+
+alert("Ürün eklendi");
+
+document.getElementById("name").value = "";
+document.getElementById("price").value = "";
+document.getElementById("description").value = "";
+document.getElementById("image").value = "";
+
+loadProducts();
+
+});
+
 }
 
-// 📦 Ürünleri listele
 function loadProducts(){
-  const list = document.getElementById("list");
-  list.innerHTML = "";
 
-  db.collection("products").get().then(snapshot=>{
-    snapshot.forEach(doc=>{
-      let p = doc.data();
-      list.innerHTML += `
-        <div class="product">
-          <b>${p.name}</b><br>
-          ${p.price} TL<br>
-          <button onclick="del('${doc.id}')">Sil</button>
-        </div>
-      `;
-    });
-  });
+const products = document.getElementById("products");
+
+products.innerHTML = "";
+
+db.collection("products").get()
+.then((querySnapshot)=>{
+
+querySnapshot.forEach((doc)=>{
+
+const p = doc.data();
+
+products.innerHTML += `
+
+<div class="product">
+
+<h3>${p.name}</h3>
+
+<p><b>Fiyat:</b> ${p.price} TL</p>
+
+<p>${p.description}</p>
+
+<img src="${p.image}" alt="">
+
+<button class="delete-btn" onclick="deleteProduct('${doc.id}')">
+Ürünü Sil
+</button>
+
+</div>
+
+`;
+
+});
+
+});
+
 }
 
-// 🗑️ Sil
-function del(id){
-  db.collection("products").doc(id).delete();
-  loadProducts();
+function deleteProduct(id){
+
+db.collection("products").doc(id).delete()
+.then(()=>{
+
+loadProducts();
+
+});
+
 }
+
 </script>
 
 </body>
