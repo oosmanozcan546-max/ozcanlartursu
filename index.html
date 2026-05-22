@@ -1,13 +1,92 @@
-<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Özcanlar Turşu</title>
-</head>
-<body style="text-align:center;font-family:Arial;">
-  <h1>Özcanlar Turşu</h1>
-  <p>Doğal ev yapımı Ankara Çubuk turşuları</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özcanlar Turşu | Doğal ve Ev Yapımı Turşular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <a href="https://wa.me/90XXXXXXXXXX">WhatsApp Sipariş</a>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pickle: { 50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d' },
+                        mustard: { 400:'#facc15',500:'#eab308',600:'#ca8a04' }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display','serif'],
+                        sans: ['Inter','sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: Inter, sans-serif; margin:0; }
+    </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section style="padding:60px; text-align:center; background:#14532d; color:white;">
+    <h1 style="font-size:40px;">Özcanlar Turşu</h1>
+    <p>Çubuk / Ankara - Doğal & Ev Yapımı Turşular</p>
+
+    <p style="margin-top:20px; font-size:18px;">
+        Katkısız, doğal ve geleneksel yöntemlerle üretilmiş turşular.
+    </p>
+
+    <a href="https://wa.me/905469571858"
+       style="display:inline-block;margin-top:20px;padding:12px 20px;background:#22c55e;color:white;border-radius:25px;text-decoration:none;">
+        WhatsApp Sipariş
+    </a>
+</section>
+
+<!-- ABOUT -->
+<section style="padding:40px; max-width:800px; margin:auto;">
+    <h2>Hakkımızda</h2>
+    <p>
+        Özcanlar Turşu olarak Ankara Çubuk’ta kendi bahçemizde yetiştirdiğimiz sebzelerle doğal turşular üretiyoruz.
+        Hiçbir katkı maddesi kullanmadan geleneksel yöntemlerle üretim yapıyoruz.
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section style="padding:40px; background:#f5f5f5; text-align:center;">
+    <h2>İletişim</h2>
+
+    <p>📞 0546 957 18 58</p>
+    <p>📍 Çubuk / Ankara</p>
+    <p>✉️ info@ozcanlartursu.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:20px; text-align:center; background:#111; color:#aaa;">
+    © 2026 Özcanlar Turşu
+</footer>
+
+<script>
+function handleOrder(e){
+    e.preventDefault();
+
+    const inputs = e.target.querySelectorAll("input, textarea");
+
+    const ad = inputs[0].value;
+    const telefon = inputs[1].value;
+    const adres = inputs[2].value;
+    const siparis = inputs[3].value;
+
+    const mesaj = `🫙 Yeni Sipariş\n\n👤 ${ad}\n📞 ${telefon}\n📍 ${adres}\n🛒 ${siparis}`;
+
+    window.open("https://wa.me/905469571858?text=" + encodeURIComponent(mesaj), "_blank");
+
+    e.target.reset();
+}
+</script>
+
 </body>
 </html>
