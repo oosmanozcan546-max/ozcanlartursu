@@ -6,9 +6,9 @@
 
 <title>Özcanlar Turşu | Çubuk Ankara Doğal Ev Yapımı Turşular</title>
 
-<meta name="description" content="Çubuk’un geleneksel lezzetini sofralara taşıyan Özcanlar Turşu. Doğal, katkısız ve ev yapımı turşular.">
+<meta name="description" content="Çubuk Ankara'nın geleneksel doğal turşuları. Salatalık turşusu, jalapeno turşusu, biber turşusu ve özel karışık turşular.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -24,19 +24,37 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#fffdf5;
+background:#fffdf7;
 color:#222;
 overflow-x:hidden;
+}
+
+/* TOP BAR */
+
+.topbar{
+background:#111;
+color:white;
+padding:12px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:14px;
+flex-wrap:wrap;
+}
+
+.topbar a{
+color:#f7c600;
+text-decoration:none;
+font-weight:600;
 }
 
 /* HEADER */
 
 header{
-position:relative;
-height:95vh;
+height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=1400&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),
+url('https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=1800&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -44,49 +62,51 @@ align-items:center;
 justify-content:center;
 text-align:center;
 padding:20px;
+position:relative;
 }
 
-.hero-content{
-max-width:900px;
+.hero{
+max-width:950px;
 color:white;
 }
 
-.hero-content h1{
-font-size:72px;
+.hero h1{
+font-size:80px;
+font-weight:800;
 line-height:1.1;
-font-weight:700;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
-.hero-content p{
+.hero p{
 font-size:22px;
-line-height:1.8;
+line-height:1.9;
 margin-bottom:35px;
 }
 
 .hero-buttons{
 display:flex;
-gap:15px;
+gap:18px;
 justify-content:center;
 flex-wrap:wrap;
 }
 
 .btn{
-padding:16px 34px;
+padding:18px 34px;
 border-radius:60px;
 text-decoration:none;
-font-weight:600;
 font-size:16px;
+font-weight:600;
 transition:0.3s;
+display:inline-block;
 }
 
 .btn-yellow{
-background:#f5c400;
+background:#f7c600;
 color:#222;
 }
 
 .btn-yellow:hover{
-transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
 .btn-green{
@@ -95,33 +115,33 @@ color:white;
 }
 
 .btn-green:hover{
-transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
 /* STORY */
 
 .story{
-padding:100px 20px;
+padding:120px 20px;
 background:white;
 }
 
 .story-container{
-max-width:1200px;
+max-width:1300px;
 margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
+gap:60px;
 align-items:center;
 }
 
-.story img{
+.story-image img{
 width:100%;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+border-radius:30px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
 .story-text h2{
-font-size:48px;
+font-size:56px;
 margin-bottom:25px;
 color:#1f7a3f;
 }
@@ -129,121 +149,153 @@ color:#1f7a3f;
 .story-text p{
 font-size:18px;
 line-height:2;
+margin-bottom:22px;
 color:#555;
-margin-bottom:20px;
-}
-
-/* PRODUCTS */
-
-.products-section{
-padding:100px 20px;
-background:#fff7d7;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:60px;
-}
-
-.section-title h2{
-font-size:52px;
-color:#1f7a3f;
-margin-bottom:15px;
-}
-
-.section-title p{
-font-size:18px;
-color:#666;
-}
-
-.products{
-max-width:1300px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.product{
-background:white;
-border-radius:24px;
-overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.product:hover{
-transform:translateY(-8px);
-}
-
-.product img{
-width:100%;
-height:280px;
-object-fit:cover;
-}
-
-.product-content{
-padding:25px;
-}
-
-.product-content h3{
-font-size:28px;
-margin-bottom:12px;
-}
-
-.product-content p{
-color:#666;
-line-height:1.7;
-font-size:15px;
-}
-
-.price{
-margin-top:18px;
-font-size:32px;
-font-weight:700;
-color:#1f7a3f;
 }
 
 /* FEATURES */
 
 .features{
 padding:100px 20px;
-background:white;
+background:#fff7d6;
 }
 
-.feature-grid{
-max-width:1200px;
+.features-grid{
+max-width:1300px;
 margin:auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
 .feature{
-background:#fffdf5;
-padding:40px 30px;
-border-radius:20px;
-text-align:center;
+background:white;
+padding:45px 35px;
+border-radius:24px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
 }
 
 .feature h3{
-margin:20px 0;
-font-size:24px;
+font-size:28px;
+margin-bottom:18px;
 color:#1f7a3f;
 }
 
 .feature p{
-line-height:1.8;
+line-height:1.9;
 color:#666;
+}
+
+/* PRODUCTS */
+
+.products{
+padding:120px 20px;
+background:white;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:60px;
+color:#1f7a3f;
+margin-bottom:15px;
+}
+
+.section-title p{
+font-size:20px;
+color:#666;
+}
+
+.products-grid{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.product{
+background:#fffdf7;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.product:hover{
+transform:translateY(-10px);
+}
+
+.product img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-content{
+padding:28px;
+}
+
+.product-content h3{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.product-content p{
+line-height:1.9;
+color:#666;
+font-size:15px;
+}
+
+.price{
+margin-top:20px;
+font-size:34px;
+font-weight:700;
+color:#1f7a3f;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:120px 20px;
+background:#fff7d6;
+}
+
+.gallery-grid{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:24px;
+transition:0.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.03);
 }
 
 /* CTA */
 
 .cta{
-padding:100px 20px;
+padding:140px 20px;
 background:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url('https://images.unsplash.com/photo-1584263347416-85a696b4eda7?q=80&w=1400&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60)),
+url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1800&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 text-align:center;
@@ -251,36 +303,37 @@ color:white;
 }
 
 .cta h2{
-font-size:56px;
-margin-bottom:20px;
+font-size:64px;
+margin-bottom:25px;
 }
 
 .cta p{
-font-size:20px;
-max-width:700px;
+max-width:850px;
 margin:auto;
-line-height:1.8;
-margin-bottom:35px;
+font-size:22px;
+line-height:2;
+margin-bottom:40px;
 }
 
 /* FOOTER */
 
 footer{
 background:#111;
-color:#ddd;
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
+color:#ddd;
 }
 
 footer h3{
-font-size:32px;
-margin-bottom:10px;
-color:#f5c400;
+font-size:40px;
+color:#f7c600;
+margin-bottom:15px;
 }
 
 footer p{
-margin-top:10px;
+margin-top:12px;
 color:#aaa;
+font-size:16px;
 }
 
 /* WHATSAPP */
@@ -291,11 +344,11 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:18px 24px;
+padding:18px 28px;
 border-radius:60px;
-font-weight:600;
 text-decoration:none;
-box-shadow:0 5px 20px rgba(0,0,0,0.25);
+font-weight:700;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
 z-index:999;
 }
 
@@ -303,8 +356,12 @@ z-index:999;
 
 @media(max-width:900px){
 
-.hero-content h1{
+.hero h1{
 font-size:48px;
+}
+
+.hero p{
+font-size:18px;
 }
 
 .story-container{
@@ -314,7 +371,11 @@ grid-template-columns:1fr;
 .story-text h2,
 .section-title h2,
 .cta h2{
-font-size:38px;
+font-size:40px;
+}
+
+.cta p{
+font-size:18px;
 }
 
 }
@@ -324,20 +385,33 @@ font-size:38px;
 
 <body>
 
+<div class="topbar">
+
+<div>
+📍 Ankara / Çubuk
+</div>
+
+<div>
+📞 <a href="tel:05469571858">0546 957 18 58</a>
+</div>
+
+</div>
+
 <header>
 
-<div class="hero-content">
+<div class="hero">
 
-<h1>Çubuk’un Geleneksel Lezzeti</h1>
+<h1>Çubuk’un Gerçek Turşu Lezzeti</h1>
 
 <p>
-Nesilden nesile aktarılan tariflerle hazırlanan,
-doğal ve katkısız ev yapımı turşular.
+Nesilden nesile aktarılan geleneksel tariflerle hazırlanan,
+katkısız ve doğal ev yapımı turşular.
+Özcanlar Turşu ile sofralarınıza gerçek Çubuk lezzetini taşıyoruz.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#products" class="btn btn-yellow">
+<a href="#urunler" class="btn btn-yellow">
 Ürünleri İncele
 </a>
 
@@ -355,26 +429,31 @@ WhatsApp Sipariş
 
 <div class="story-container">
 
-<img src="https://images.unsplash.com/photo-1584263347416-85a696b4eda7?q=80&w=1200&auto=format&fit=crop">
+<div class="story-image">
+
+<img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1400&auto=format&fit=crop">
+
+</div>
 
 <div class="story-text">
 
 <h2>Bizim Hikâyemiz</h2>
 
 <p>
-Özcanlar Turşu, Ankara’nın Çubuk ilçesinde başlayan
-bir aile emeğinin ürünüdür.
+Özcanlar Turşu’nun hikâyesi Ankara Çubuk’ta başladı.
+Yıllardır süregelen aile geleneğimiz ile doğal,
+çıtır ve katkısız turşular üretiyoruz.
 </p>
 
 <p>
-Mevsiminde özenle seçilen sebzeler,
-geleneksel yöntemlerle kurulup
-katkısız şekilde sofralara ulaştırılır.
+Her kavanozda emek, gelenek ve gerçek lezzet bulunur.
+Mevsiminde özenle seçilen ürünler,
+doğal fermantasyon yöntemi ile kurulmaktadır.
 </p>
 
 <p>
-Bizim için turşu sadece bir lezzet değil;
-aile, emek ve kültürün devamıdır.
+Bizim için turşu yalnızca bir ürün değil,
+Çubuk kültürünün sofralara taşınan bir mirasıdır.
 </p>
 
 </div>
@@ -383,48 +462,68 @@ aile, emek ve kültürün devamıdır.
 
 </section>
 
-<section class="products-section" id="products">
+<section class="features">
+
+<div class="features-grid">
+
+<div class="feature">
+
+<h3>%100 Doğal</h3>
+
+<p>
+Koruyucu ve katkı maddesi kullanılmadan geleneksel yöntemlerle hazırlanır.
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Gerçek Çubuk Turşusu</h3>
+
+<p>
+Ankara Çubuk’un yıllardır süregelen turşu kültürünü yaşatıyoruz.
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Taze Üretim</h3>
+
+<p>
+Mevsiminde seçilen ürünlerle günlük ve taze üretim yapılır.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="products" id="urunler">
 
 <div class="section-title">
 
 <h2>Özel Lezzetlerimiz</h2>
 
 <p>
-Doğal yöntemlerle hazırlanan seçkin ürünlerimiz
+Katkısız, doğal ve geleneksel yöntemlerle hazırlanan ürünlerimiz
 </p>
 
 </div>
 
-<div class="products" id="products-list">
+<div class="products-grid">
 
 <div class="product">
 
-<img src="https://images.unsplash.com/photo-1603048719539-9ecb4ae8d8c1?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-content">
-
-<h3>Karışık Turşu</h3>
-
-<p>
-Çıtır salatalık, havuç ve biber ile hazırlanan geleneksel Çubuk karışık turşusu.
-</p>
-
-<div class="price">180 TL</div>
-
-</div>
-
-</div>
-
-<div class="product">
-
-<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1603048719539-9ecb4ae8d8c1?q=80&w=1400&auto=format&fit=crop">
 
 <div class="product-content">
 
 <h3>Salatalık Turşusu</h3>
 
 <p>
-Taş fıçı usulü kurulan doğal ve katkısız çıtır salatalık turşusu.
+Çıtır yapısı ve doğal aroması ile hazırlanan gerçek Çubuk salatalık turşusu.
 </p>
 
 <div class="price">160 TL</div>
@@ -435,17 +534,53 @@ Taş fıçı usulü kurulan doğal ve katkısız çıtır salatalık turşusu.
 
 <div class="product">
 
-<img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1400&auto=format&fit=crop">
 
 <div class="product-content">
 
 <h3>Biber Turşusu</h3>
 
 <p>
-Acı sevenler için özel hazırlanan doğal sarı biber turşusu.
+Acı ve aromatik lezzeti sevenler için özel hazırlanan doğal biber turşusu.
 </p>
 
-<div class="price">170 TL</div>
+<div class="price">175 TL</div>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1400&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Jalapeno Turşusu</h3>
+
+<p>
+Özel baharat dengesi ile hazırlanan yoğun aromalı jalapeno turşusu.
+</p>
+
+<div class="price">220 TL</div>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1584263347416-85a696b4eda7?q=80&w=1400&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Karışık Turşu</h3>
+
+<p>
+Salatalık, havuç, biber ve özel sebzelerle hazırlanan karışık turşu.
+</p>
+
+<div class="price">190 TL</div>
 
 </div>
 
@@ -455,39 +590,27 @@ Acı sevenler için özel hazırlanan doğal sarı biber turşusu.
 
 </section>
 
-<section class="features">
+<section class="gallery">
 
-<div class="feature-grid">
+<div class="section-title">
 
-<div class="feature">
-
-<h3>%100 Doğal</h3>
+<h2>Lezzet Galerisi</h2>
 
 <p>
-Katkı maddesi olmadan geleneksel yöntemlerle hazırlanır.
+Gerçek üretim ve doğal lezzetlerden kareler
 </p>
 
 </div>
 
-<div class="feature">
+<div class="gallery-grid">
 
-<h3>Çubuk Geleneği</h3>
+<img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=1200&auto=format&fit=crop">
 
-<p>
-Ankara Çubuk’un yıllardır süregelen gerçek turşu kültürü.
-</p>
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop">
 
-</div>
+<img src="https://images.unsplash.com/photo-1603048719539-9ecb4ae8d8c1?q=80&w=1200&auto=format&fit=crop">
 
-<div class="feature">
-
-<h3>Taze Üretim</h3>
-
-<p>
-Mevsiminde seçilen ürünlerle günlük ve taze üretim.
-</p>
-
-</div>
+<img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1200&auto=format&fit=crop">
 
 </div>
 
@@ -498,11 +621,11 @@ Mevsiminde seçilen ürünlerle günlük ve taze üretim.
 <h2>Sofranıza Gerçek Lezzeti Taşıyın</h2>
 
 <p>
-Özcanlar Turşu’nun doğal ve geleneksel lezzetleri için hemen bizimle iletişime geçin.
+Doğal, katkısız ve geleneksel yöntemlerle hazırlanan Özcanlar Turşu ürünleri için hemen bizimle iletişime geçin.
 </p>
 
 <a href="https://wa.me/905469571858" class="btn btn-yellow">
-Sipariş Ver
+Hemen Sipariş Ver
 </a>
 
 </section>
@@ -511,7 +634,9 @@ Sipariş Ver
 
 <h3>Özcanlar Turşu</h3>
 
-<p>Ankara / Çubuk</p>
+<p>📍 Ankara / Çubuk</p>
+
+<p>📞 0546 957 18 58</p>
 
 <p>
 Doğal • Geleneksel • Katkısız
