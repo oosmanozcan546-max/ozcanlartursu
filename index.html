@@ -3,118 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Özcanlar Turşu Admin Panel</title>
+<title>Özcanlar Turşu</title>
 
 <style>
+
 body{
-font-family:Arial,sans-serif;
-background:#f4f4f4;
+font-family:Arial;
 margin:0;
-padding:20px;
+background:#f5f5f5;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-h1,h2{
+header{
+background:#1f7a3f;
+color:white;
+padding:30px;
 text-align:center;
 }
 
-input, textarea{
-width:100%;
-padding:12px;
-margin:8px 0;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
-box-sizing:border-box;
-}
-
-button{
-padding:12px;
-border:none;
-border-radius:8px;
-background:#1f7a3f;
-color:white;
-font-size:16px;
-cursor:pointer;
-margin-top:10px;
-width:100%;
-}
-
-button:hover{
-background:#14552b;
+.products{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
 }
 
 .product{
-border:1px solid #ddd;
+background:white;
 padding:15px;
 border-radius:10px;
-margin-top:15px;
-background:#fafafa;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .product img{
 width:100%;
-max-width:250px;
+height:250px;
+object-fit:cover;
 border-radius:10px;
-margin-top:10px;
 }
 
-.delete-btn{
-background:#c62828;
+.price{
+color:#1f7a3f;
+font-size:22px;
+font-weight:bold;
 }
 
-.delete-btn:hover{
-background:#8e0000;
-}
-
-#panel{
-display:none;
-}
 </style>
+
 </head>
+
 <body>
 
-<div class="container">
+<header>
 
 <h1>Özcanlar Turşu</h1>
 
-<div id="loginBox">
-<h2>Admin Giriş</h2>
+<p>Doğal Ev Yapımı Çubuk Turşuları</p>
 
-<input type="password" id="password" placeholder="Şifre">
+</header>
 
-<button onclick="login()">Giriş Yap</button>
-</div>
-
-<div id="panel">
-
-<h2>Ürün Ekle</h2>
-
-<input type="text" id="name" placeholder="Ürün Adı">
-
-<input type="number" id="price" placeholder="Fiyat">
-
-<textarea id="description" placeholder="Açıklama"></textarea>
-
-<input type="text" id="image" placeholder="Resim URL">
-
-<button onclick="addProduct()">Ürün Ekle</button>
-
-<h2>Ürünler</h2>
-
-<div id="products"></div>
-
-</div>
-
-</div>
+<div class="products" id="products"></div>
 
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
@@ -135,87 +84,25 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-function login(){
+const productsDiv = document.getElementById("products");
 
-const pass = document.getElementById("password").value;
-
-if(pass === "1234"){
-
-document.getElementById("loginBox").style.display = "none";
-
-document.getElementById("panel").style.display = "block";
-
-loadProducts();
-
-}else{
-
-alert("Şifre yanlış");
-
-}
-
-}
-
-function addProduct(){
-
-const name = document.getElementById("name").value;
-
-const price = document.getElementById("price").value;
-
-const description = document.getElementById("description").value;
-
-const image = document.getElementById("image").value;
-
-db.collection("products").add({
-
-name:name,
-price:price,
-description:description,
-image:image
-
-})
-.then(()=>{
-
-alert("Ürün eklendi");
-
-document.getElementById("name").value = "";
-document.getElementById("price").value = "";
-document.getElementById("description").value = "";
-document.getElementById("image").value = "";
-
-loadProducts();
-
-});
-
-}
-
-function loadProducts(){
-
-const products = document.getElementById("products");
-
-products.innerHTML = "";
-
-db.collection("products").get()
-.then((querySnapshot)=>{
+db.collection("products").get().then((querySnapshot)=>{
 
 querySnapshot.forEach((doc)=>{
 
 const p = doc.data();
 
-products.innerHTML += `
+productsDiv.innerHTML += `
 
 <div class="product">
 
-<h3>${p.name}</h3>
+<img src="${p.image}" alt="">
 
-<p><b>Fiyat:</b> ${p.price} TL</p>
+<h2>${p.name}</h2>
 
 <p>${p.description}</p>
 
-<img src="${p.image}" alt="">
-
-<button class="delete-btn" onclick="deleteProduct('${doc.id}')">
-Ürünü Sil
-</button>
+<div class="price">${p.price} TL</div>
 
 </div>
 
@@ -224,19 +111,6 @@ products.innerHTML += `
 });
 
 });
-
-}
-
-function deleteProduct(id){
-
-db.collection("products").doc(id).delete()
-.then(()=>{
-
-loadProducts();
-
-});
-
-}
 
 </script>
 
