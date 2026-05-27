@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Özcanlar Turşu | Çubuk Ankara Doğal Gurme Turşular</title>
+<title>Özcanlar Turşu | Premium Çubuk Turşuları</title>
 
-<meta name="description" content="Ankara Çubuk'tan doğal, katkısız ve geleneksel yöntemlerle hazırlanan premium gurme turşular.">
-<meta name="keywords" content="çubuk turşusu, ankara turşu, doğal turşu, ev yapımı turşu">
-<meta name="author" content="Özcanlar Turşu">
+<meta name="description" content="Çubuk Ankara’dan doğal, katkısız ve premium gurme turşular. Türkiye geneli güvenli gönderim.">
+
+<meta name="keywords" content="çubuk turşusu, doğal turşu, premium turşu, ankara turşu">
+
+<meta property="og:title" content="Özcanlar Turşu">
+<meta property="og:description" content="Premium Çubuk Turşuları">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,483 +26,547 @@
 <style>
 
 :root{
-    --cream:#f9f5ef;
-    --white:#ffffff;
-    --dark:#101010;
-    --green:#122118;
-    --green2:#1d3626;
-    --gold:#c79a32;
+--cream:#f8f5ef;
+--white:#ffffff;
+--dark:#121212;
+--green:#102218;
+--green2:#1a3525;
+--gold:#c89c35;
+--gray:#666;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Montserrat',sans-serif;
-    background:var(--cream);
-    color:var(--dark);
-    overflow-x:hidden;
-    line-height:1.8;
+font-family:'Montserrat',sans-serif;
+background:var(--cream);
+color:var(--dark);
+overflow-x:hidden;
+line-height:1.8;
 }
 
 .container{
-    width:100%;
-    max-width:1280px;
-    margin:auto;
-    padding:0 25px;
+width:100%;
+max-width:1320px;
+margin:auto;
+padding:0 25px;
 }
 
 h1,h2,h3,.logo{
-    font-family:'Cinzel',serif;
+font-family:'Cinzel',serif;
+}
+
+img{
+max-width:100%;
+display:block;
 }
 
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:9999;
-    background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(0,0,0,0.06);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:9999;
+padding:18px 0;
+transition:0.4s;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 .header-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo-area{
-    text-decoration:none;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-    font-size:34px;
-    font-weight:800;
-    color:var(--green);
-    line-height:1;
+font-size:34px;
+font-weight:800;
+color:var(--green);
+line-height:1;
 }
 
 .logo-sub{
-    color:var(--gold);
-    font-size:11px;
-    letter-spacing:7px;
-    font-weight:800;
-    margin-top:6px;
+font-size:11px;
+letter-spacing:7px;
+margin-top:6px;
+font-weight:800;
+color:var(--gold);
 }
 
 nav ul{
-    display:flex;
-    list-style:none;
-}
-
-nav ul li{
-    margin-left:35px;
+display:flex;
+list-style:none;
+gap:35px;
 }
 
 nav ul li a{
-    text-decoration:none;
-    color:var(--dark);
-    font-weight:700;
-    font-size:14px;
-    transition:0.3s;
-    letter-spacing:1px;
-    text-transform:uppercase;
+text-decoration:none;
+color:var(--dark);
+font-size:14px;
+font-weight:700;
+letter-spacing:1px;
+text-transform:uppercase;
+transition:0.3s;
 }
 
 nav ul li a:hover{
-    color:var(--gold);
+color:var(--gold);
+}
+
+.header-phone{
+text-decoration:none;
+font-weight:700;
+color:var(--green);
+font-size:15px;
 }
 
 .hero{
-    height:100vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    overflow:hidden;
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+top:0;
+left:0;
+z-index:-3;
 }
 
 .hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(rgba(249,245,239,0.76),rgba(249,245,239,0.88)),
-    url('http://googleusercontent.com/image_collection/image_retrieval/10161999581161972066') center center/cover;
-    z-index:-2;
-}
-
-.hero::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    backdrop-filter:blur(2px);
-    z-index:-1;
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(248,245,239,0.72),rgba(248,245,239,0.90));
+z-index:-2;
 }
 
 .hero-content{
-    max-width:950px;
-    padding-top:100px;
+max-width:980px;
+padding-top:120px;
 }
 
 .hero-badge{
-    display:inline-block;
-    background:rgba(199,154,50,0.14);
-    color:var(--gold);
-    padding:10px 22px;
-    border-radius:50px;
-    font-size:14px;
-    font-weight:700;
-    margin-bottom:30px;
-    letter-spacing:1px;
+display:inline-block;
+padding:12px 28px;
+background:rgba(200,156,53,0.12);
+border:1px solid rgba(200,156,53,0.25);
+border-radius:50px;
+color:var(--gold);
+font-size:14px;
+font-weight:700;
+letter-spacing:1px;
+margin-bottom:28px;
 }
 
 .hero h1{
-    font-size:76px;
-    line-height:1.1;
-    color:var(--green);
-    margin-bottom:25px;
+font-size:86px;
+line-height:1.1;
+color:var(--green);
+margin-bottom:24px;
 }
 
 .hero h1 span{
-    display:block;
-    color:var(--gold);
+display:block;
+color:var(--gold);
 }
 
 .hero p{
-    font-size:22px;
-    font-weight:500;
-    margin-bottom:45px;
+font-size:22px;
+max-width:850px;
+margin:auto;
+margin-bottom:42px;
+font-weight:500;
+}
+
+.glass-box{
+display:inline-block;
+padding:16px 30px;
+border-radius:20px;
+background:rgba(255,255,255,0.18);
+border:1px solid rgba(255,255,255,0.28);
+backdrop-filter:blur(12px);
+font-weight:700;
+color:var(--green);
+margin-bottom:35px;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .btn{
-    text-decoration:none;
-    padding:18px 38px;
-    border-radius:60px;
-    font-weight:800;
-    transition:0.4s;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+padding:18px 38px;
+border-radius:60px;
+text-decoration:none;
+font-weight:800;
+display:inline-flex;
+align-items:center;
+gap:12px;
+transition:0.4s;
 }
 
 .btn-primary{
-    background:#25D366;
-    color:white;
-    box-shadow:0 12px 30px rgba(37,211,102,0.25);
+background:#25D366;
+color:white;
+box-shadow:0 15px 35px rgba(37,211,102,0.28);
 }
 
 .btn-primary:hover{
-    transform:translateY(-5px);
-    background:#1faa52;
+transform:translateY(-6px);
 }
 
 .btn-secondary{
-    background:var(--green);
-    color:white;
+background:var(--green);
+color:white;
 }
 
 .btn-secondary:hover{
-    background:var(--gold);
+background:var(--gold);
 }
 
 .section{
-    padding:120px 0;
+padding:120px 0;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:70px;
+text-align:center;
+margin-bottom:70px;
 }
 
 .section-title h2{
-    font-size:52px;
-    color:var(--green);
-    margin-bottom:15px;
+font-size:54px;
+color:var(--green);
+margin-bottom:16px;
 }
 
 .section-title p{
-    max-width:750px;
-    margin:auto;
-    color:#555;
-    font-size:18px;
+max-width:760px;
+margin:auto;
+font-size:18px;
+color:var(--gray);
 }
 
 .line{
-    width:90px;
-    height:4px;
-    background:var(--gold);
-    margin:25px auto;
-    border-radius:20px;
+width:90px;
+height:4px;
+background:var(--gold);
+margin:24px auto;
+border-radius:20px;
 }
 
 .story-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
 }
 
 .story-image img{
-    width:100%;
-    border-radius:24px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.12);
+border-radius:28px;
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
 }
 
 .story-text p{
-    margin-bottom:24px;
-    font-size:18px;
-    font-weight:500;
+margin-bottom:22px;
+font-size:18px;
 }
 
 .features{
-    background:var(--white);
+background:var(--white);
 }
 
 .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .feature-card{
-    background:var(--cream);
-    border-radius:22px;
-    padding:40px 30px;
-    text-align:center;
-    transition:0.4s;
+background:var(--cream);
+padding:45px 30px;
+border-radius:26px;
+text-align:center;
+transition:0.4s;
 }
 
 .feature-card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
 .feature-card i{
-    font-size:42px;
-    color:var(--gold);
-    margin-bottom:25px;
+font-size:44px;
+color:var(--gold);
+margin-bottom:24px;
 }
 
 .feature-card h3{
-    margin-bottom:15px;
-    font-size:24px;
+font-size:25px;
+margin-bottom:14px;
 }
 
 .products-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
 }
 
 .product-card{
-    background:var(--white);
-    border-radius:26px;
-    overflow:hidden;
-    transition:0.45s;
-    box-shadow:0 18px 45px rgba(0,0,0,0.07);
+position:relative;
+background:var(--white);
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 18px 50px rgba(0,0,0,0.08);
+transition:0.45s;
 }
 
 .product-card:hover{
-    transform:translateY(-12px);
+transform:translateY(-12px);
+}
+
+.premium-tag{
+position:absolute;
+top:18px;
+left:18px;
+background:var(--gold);
+color:white;
+padding:8px 18px;
+border-radius:30px;
+font-size:12px;
+font-weight:800;
+z-index:5;
 }
 
 .product-image{
-    height:360px;
-    overflow:hidden;
+height:360px;
+overflow:hidden;
 }
 
 .product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.6s;
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.6s;
 }
 
 .product-card:hover img{
-    transform:scale(1.08);
+transform:scale(1.08);
 }
 
 .product-info{
-    padding:35px;
+padding:35px;
 }
 
 .product-info h3{
-    font-size:28px;
-    margin-bottom:15px;
-    color:var(--green);
+font-size:28px;
+color:var(--green);
+margin-bottom:16px;
 }
 
 .product-info p{
-    margin-bottom:28px;
-    color:#555;
+color:var(--gray);
+margin-bottom:28px;
 }
 
 .product-btn{
-    background:var(--green);
-    color:white;
-    text-decoration:none;
-    padding:15px 30px;
-    border-radius:12px;
-    display:inline-block;
-    font-weight:700;
-    transition:0.3s;
+background:var(--green);
+color:white;
+padding:15px 28px;
+text-decoration:none;
+border-radius:12px;
+font-weight:700;
+display:inline-block;
+transition:0.3s;
 }
 
 .product-btn:hover{
-    background:var(--gold);
+background:var(--gold);
 }
 
 .gallery{
-    background:var(--white);
+background:var(--white);
 }
 
 .gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
 }
 
 .gallery-grid img{
-    width:100%;
-    height:340px;
-    object-fit:cover;
-    border-radius:22px;
-    transition:0.5s;
-    box-shadow:0 15px 35px rgba(0,0,0,0.10);
+height:340px;
+object-fit:cover;
+border-radius:24px;
+transition:0.4s;
+box-shadow:0 18px 40px rgba(0,0,0,0.10);
 }
 
 .gallery-grid img:hover{
-    transform:scale(1.03);
+transform:scale(1.03);
 }
 
 .stats{
-    background:linear-gradient(135deg,var(--green),var(--green2));
-    color:white;
+background:linear-gradient(135deg,var(--green),var(--green2));
+color:white;
 }
 
 .stats-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:40px;
-    text-align:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+text-align:center;
 }
 
 .stat h3{
-    font-size:56px;
-    color:var(--gold);
+font-size:58px;
+color:var(--gold);
 }
 
 .stat p{
-    font-size:18px;
-    font-weight:600;
+font-size:18px;
+font-weight:600;
 }
 
 .contact{
-    background:var(--white);
+background:var(--white);
 }
 
 .contact-box{
-    background:var(--cream);
-    padding:60px;
-    border-radius:30px;
-    text-align:center;
+background:var(--cream);
+padding:70px;
+border-radius:30px;
+text-align:center;
 }
 
 .contact-box h2{
-    font-size:44px;
-    margin-bottom:20px;
-    color:var(--green);
+font-size:48px;
+margin-bottom:18px;
+color:var(--green);
 }
 
 .contact-box p{
-    font-size:18px;
-    margin-bottom:35px;
+font-size:18px;
+margin-bottom:35px;
+}
+
+.map{
+margin-top:45px;
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.10);
 }
 
 footer{
-    background:var(--green);
-    color:white;
-    padding:90px 0 30px;
+background:var(--green);
+color:white;
+padding:90px 0 30px;
 }
 
 .footer-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
-    margin-bottom:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-bottom:50px;
 }
 
 .footer-col h4{
-    color:var(--gold);
-    margin-bottom:25px;
-    font-size:22px;
+color:var(--gold);
+margin-bottom:22px;
+font-size:22px;
 }
 
 .footer-col p,
 .footer-col a{
-    color:#d7d7d7;
-    text-decoration:none;
-    display:block;
-    margin-bottom:14px;
+color:#d7d7d7;
+text-decoration:none;
+display:block;
+margin-bottom:14px;
+}
+
+.socials{
+display:flex;
+gap:16px;
+margin-top:20px;
+}
+
+.socials a{
+width:45px;
+height:45px;
+background:rgba(255,255,255,0.08);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.socials a:hover{
+background:var(--gold);
+transform:translateY(-5px);
 }
 
 .footer-bottom{
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:30px;
-    text-align:center;
-    color:#999;
+border-top:1px solid rgba(255,255,255,0.08);
+padding-top:30px;
+text-align:center;
+color:#aaa;
 }
 
 .floating-wp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:70px;
-    height:70px;
-    background:#25D366;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    text-decoration:none;
-    z-index:99999;
-    box-shadow:0 15px 35px rgba(37,211,102,0.4);
-    animation:pulse 2s infinite;
+position:fixed;
+right:25px;
+bottom:25px;
+width:72px;
+height:72px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+color:white;
+text-decoration:none;
+z-index:99999;
+box-shadow:0 15px 35px rgba(37,211,102,0.4);
+animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.08);}
-    100%{transform:scale(1);}
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
 }
 
 @media(max-width:992px){
 
-.hero h1{
-    font-size:56px;
+.story-grid{
+grid-template-columns:1fr;
 }
 
-.story-grid{
-    grid-template-columns:1fr;
+.hero h1{
+font-size:58px;
 }
 
 }
@@ -504,52 +574,46 @@ footer{
 @media(max-width:768px){
 
 .header-inner{
-    flex-direction:column;
-    gap:20px;
+flex-direction:column;
+gap:20px;
 }
 
 nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-nav ul li{
-    margin:10px 14px;
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
 }
 
 .hero{
-    height:auto;
-    padding:170px 0 120px;
+height:auto;
+padding:180px 0 120px;
 }
 
 .hero h1{
-    font-size:42px;
-}
-
-.hero h1 span{
-    font-size:50px;
+font-size:42px;
 }
 
 .hero p{
-    font-size:18px;
+font-size:18px;
 }
 
 .section-title h2{
-    font-size:38px;
+font-size:38px;
 }
 
 .contact-box{
-    padding:40px 25px;
+padding:40px 25px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<a href="https://wa.me/905469571858?text=Merhaba%20Özcanlar%20Turşu,%20sipariş%20vermek%20istiyorum." class="floating-wp" target="_blank">
+<a href="https://wa.me/905469571858" class="floating-wp" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -557,10 +621,10 @@ nav ul li{
 
 <div class="container header-inner">
 
-<a href="#" class="logo-area">
+<div>
 <div class="logo">Özcanlar</div>
 <div class="logo-sub">TURŞU</div>
-</a>
+</div>
 
 <nav>
 <ul>
@@ -571,11 +635,20 @@ nav ul li{
 </ul>
 </nav>
 
+<a href="tel:+905469571858" class="header-phone">
+<i class="fas fa-phone"></i>
+0546 957 18 58
+</a>
+
 </div>
 
 </header>
 
 <section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="videos/tursu.mp4" type="video/mp4">
+</video>
 
 <div class="container hero-content">
 
@@ -584,17 +657,21 @@ nav ul li{
 </div>
 
 <h1>
-Toprağın Sakladığı
-<span>Gerçek Lezzet</span>
+Gerçek Gurme
+<span>Çubuk Turşusu</span>
 </h1>
 
+<div class="glass-box">
+%100 Doğal • Katkısız • Geleneksel Üretim
+</div>
+
 <p>
-Dalından toplandığı gün kavanozlanan, tamamen doğal yöntemlerle hazırlanan premium Çubuk turşuları.
+Dalından toplandığı gün kavanozlanan, doğal yöntemlerle hazırlanan premium Çubuk turşuları.
 </p>
 
 <div class="hero-buttons">
 
-<a href="https://wa.me/905469571858?text=Merhaba%20Özcanlar%20Turşu,%20sipariş%20vermek%20istiyorum." target="_blank" class="btn btn-primary">
+<a href="https://wa.me/905469571858" class="btn btn-primary">
 <i class="fab fa-whatsapp"></i>
 Sipariş Ver
 </a>
@@ -617,7 +694,7 @@ Sipariş Ver
 <h2>Bir Lezzet Geleneği</h2>
 <div class="line"></div>
 <p>
-Çubuk'un bereketli topraklarında başlayan doğal üretim hikayemiz nesillerdir aynı özenle devam ediyor.
+Çubuk’un bereketli topraklarında başlayan doğal üretim hikayemiz nesillerdir aynı özenle devam ediyor.
 </p>
 </div>
 
@@ -626,27 +703,21 @@ Sipariş Ver
 <div class="story-text">
 
 <p>
-Özcanlar Turşu olarak üretimin merkezine kaliteyi, doğallığı ve geleneksel yöntemleri koyuyoruz.
+Özcanlar Turşu olarak üretimin merkezine kaliteyi ve doğallığı koyuyoruz.
 </p>
 
 <p>
-Turşularımız tamamen doğal kaya tuzu, taze sarımsak ve özel salamura dengesiyle hazırlanır.
+Turşularımız doğal kaya tuzu, taze sarımsak ve geleneksel salamura yöntemiyle hazırlanır.
 </p>
 
 <p>
 Katkı maddesi kullanılmadan hazırlanan ürünlerimiz sofralara gerçek Çubuk lezzetini taşır.
 </p>
 
-<p>
-Her kavanoz; emek, sabır ve yılların deneyiminin sonucudur.
-</p>
-
 </div>
 
 <div class="story-image">
-
-<img src="http://googleusercontent.com/image_collection/image_retrieval/10161999581161972066" alt="Özcanlar Turşu">
-
+<img src="images/hero.jpg" alt="Özcanlar Turşu">
 </div>
 
 </div>
@@ -669,33 +740,19 @@ Her kavanoz; emek, sabır ve yılların deneyiminin sonucudur.
 <div class="feature-card">
 <i class="fas fa-leaf"></i>
 <h3>Katkısız Üretim</h3>
-<p>
-Tamamen doğal yöntemlerle hazırlanan gerçek ev yapımı turşular.
-</p>
-</div>
-
-<div class="feature-card">
-<i class="fas fa-seedling"></i>
-<h3>Taze Mahsul</h3>
-<p>
-Dalından toplandığı gün işlenen diri ve kaliteli ürünler.
-</p>
+<p>Doğal yöntemlerle hazırlanan gerçek ev yapımı turşular.</p>
 </div>
 
 <div class="feature-card">
 <i class="fas fa-truck"></i>
 <h3>Türkiye Geneli Kargo</h3>
-<p>
-Güvenli paketleme ile Türkiye'nin her yerine gönderim.
-</p>
+<p>Özel korumalı paketleme ile güvenli gönderim.</p>
 </div>
 
 <div class="feature-card">
 <i class="fas fa-award"></i>
 <h3>Premium Kalite</h3>
-<p>
-Geleneksel tariflerle hazırlanan gurme lezzet deneyimi.
-</p>
+<p>Geleneksel tariflerle hazırlanan gurme lezzet.</p>
 </div>
 
 </div>
@@ -709,28 +766,25 @@ Geleneksel tariflerle hazırlanan gurme lezzet deneyimi.
 <div class="container">
 
 <div class="section-title">
-<h2>Gurme Koleksiyon</h2>
+<h2>Premium Koleksiyon</h2>
 <div class="line"></div>
-<p>
-Özenle seçilen mahsullerle hazırlanan özel seri turşularımız.
-</p>
 </div>
 
 <div class="products-grid">
 
 <div class="product-card">
 
+<div class="premium-tag">Premium</div>
+
 <div class="product-image">
-<img src="http://googleusercontent.com/image_collection/image_retrieval/13060216391893165110" alt="Salatalık Turşusu">
+<img src="images/salatalik.jpg">
 </div>
 
 <div class="product-info">
 <h3>Salatalık Turşusu</h3>
-<p>
-Çubuk'un meşhur kütür kütür salatalıklarıyla hazırlanan özel seri.
-</p>
+<p>Çubuk’un meşhur çıtır salatalıklarıyla hazırlanan özel seri.</p>
 
-<a href="https://wa.me/905469571858?text=Salatalık%20Turşusu%20siparişi%20vermek%20istiyorum." class="product-btn">
+<a href="https://wa.me/905469571858" class="product-btn">
 Sipariş Ver
 </a>
 
@@ -740,17 +794,17 @@ Sipariş Ver
 
 <div class="product-card">
 
+<div class="premium-tag">Premium</div>
+
 <div class="product-image">
-<img src="http://googleusercontent.com/image_collection/image_retrieval/13850322017081681041" alt="Jalapeno Turşusu">
+<img src="images/jalapeno.jpg">
 </div>
 
 <div class="product-info">
 <h3>Jalapeño Turşusu</h3>
-<p>
-Hafif acı sevenler için özel salamura dengesiyle hazırlanan premium seri.
-</p>
+<p>Özel salamura dengesiyle hazırlanan premium acı seri.</p>
 
-<a href="https://wa.me/905469571858?text=Jalapeño%20Turşusu%20siparişi%20vermek%20istiyorum." class="product-btn">
+<a href="https://wa.me/905469571858" class="product-btn">
 Sipariş Ver
 </a>
 
@@ -760,17 +814,17 @@ Sipariş Ver
 
 <div class="product-card">
 
+<div class="premium-tag">Premium</div>
+
 <div class="product-image">
-<img src="images/karnabahar-tursusu.jpg" alt="Karnabahar Turşusu">
+<img src="images/karnabahar.jpg">
 </div>
 
 <div class="product-info">
 <h3>Karnabahar Turşusu</h3>
-<p>
-Kar beyazı taze karnabaharlarla hazırlanan kütür kütür özel seri.
-</p>
+<p>Taze karnabaharlarla hazırlanan kütür kütür özel seri.</p>
 
-<a href="https://wa.me/905469571858?text=Karnabahar%20Turşusu%20siparişi%20vermek%20istiyorum." class="product-btn">
+<a href="https://wa.me/905469571858" class="product-btn">
 Sipariş Ver
 </a>
 
@@ -791,22 +845,17 @@ Sipariş Ver
 <div class="section-title">
 <h2>Üretimden Kareler</h2>
 <div class="line"></div>
-
-<p>
-Çubuk’un bereketli topraklarından sofralara uzanan doğal üretim sürecimiz.
-</p>
-
 </div>
 
 <div class="gallery-grid">
 
-<img src="http://googleusercontent.com/image_collection/image_retrieval/10161999581161972066" alt="Özcanlar Turşu Üretim">
+<img src="images/hero.jpg">
 
-<img src="http://googleusercontent.com/image_collection/image_retrieval/13060216391893165110" alt="Salatalık Turşusu">
+<img src="images/salatalik.jpg">
 
-<img src="http://googleusercontent.com/image_collection/image_retrieval/13850322017081681041" alt="Jalapeño Turşusu">
+<img src="images/jalapeno.jpg">
 
-<img src="images/karnabahar-tursusu.jpg" alt="Karnabahar Turşusu">
+<img src="images/karnabahar.jpg">
 
 </div>
 
@@ -855,7 +904,7 @@ Sipariş Ver
 <h2>Sipariş ve Bayilik</h2>
 
 <p>
-Premium Çubuk turşularımız hakkında bilgi almak veya sipariş oluşturmak için hemen bizimle iletişime geçin.
+Premium Çubuk turşularımız hakkında bilgi almak için bizimle iletişime geçin.
 </p>
 
 <div class="hero-buttons">
@@ -865,10 +914,23 @@ Premium Çubuk turşularımız hakkında bilgi almak veya sipariş oluşturmak i
 0546 957 18 58
 </a>
 
-<a href="https://wa.me/905469571858?text=Merhaba%20Özcanlar%20Turşu" target="_blank" class="btn btn-primary">
+<a href="https://wa.me/905469571858" class="btn btn-primary">
 <i class="fab fa-whatsapp"></i>
 WhatsApp
 </a>
+
+</div>
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps"
+width="100%"
+height="350"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
 
 </div>
 
@@ -885,23 +947,45 @@ WhatsApp
 <div class="footer-grid">
 
 <div class="footer-col">
+
 <h4>Özcanlar Turşu</h4>
+
 <p>
-Çubuk Ankara'nın geleneksel turşu kültürünü premium kaliteyle sofralara taşıyoruz.
+Çubuk Ankara’nın geleneksel turşu kültürünü premium kaliteyle sofralara taşıyoruz.
 </p>
+
+<div class="socials">
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-tiktok"></i></a>
+
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+
+</div>
+
 </div>
 
 <div class="footer-col">
+
 <h4>İletişim</h4>
+
 <a href="tel:+905469571858">0546 957 18 58</a>
-<a href="#">Gökçedere Mahallesi No:88/A Çubuk / Ankara</a>
+
+<a href="#">Gökçedere Mahallesi Çubuk / Ankara</a>
+
 </div>
 
 <div class="footer-col">
+
 <h4>Hızlı Menü</h4>
+
 <a href="#hikaye">Hikayemiz</a>
+
 <a href="#urunler">Ürünler</a>
+
 <a href="#galeri">Galeri</a>
+
 </div>
 
 </div>
@@ -913,6 +997,24 @@ WhatsApp
 </div>
 
 </footer>
+
+<script>
+
+window.addEventListener('scroll',function(){
+
+const header=document.querySelector('header');
+
+if(window.scrollY>50){
+header.style.background="#ffffff";
+header.style.boxShadow="0 10px 30px rgba(0,0,0,0.08)";
+}else{
+header.style.background="rgba(255,255,255,0.85)";
+header.style.boxShadow="none";
+}
+
+});
+
+</script>
 
 </body>
 </html>
